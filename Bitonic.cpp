@@ -1,10 +1,10 @@
 #include <iostream>
 #include <algorithm>
 
-void bitonicSequence(int arr[], int size) {
-    int mid = size / 2;                   
-    std::sort(arr, arr + mid);               
-    std::sort(arr + mid, arr + size, std::greater<int>());   
+void bitonicSequence(int array[], int sizeofArray) {
+    int mid = sizeofArray / 2;                   
+    std::sort(array, array + mid);               
+    std::sort(array + mid, array + sizeofArray, std::greater<int>());   
 }
 
 
