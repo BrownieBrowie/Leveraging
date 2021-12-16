@@ -1,5 +1,7 @@
 #include <iostream>
 #include <algorithm>
+#include <ctime>
+#include <cstdlib>
 
 void bitonicSequence(int array[], int sizeofArray) {
     int mid = sizeofArray / 2;                   
@@ -7,21 +9,31 @@ void bitonicSequence(int array[], int sizeofArray) {
     std::sort(array + mid, array + sizeofArray, std::greater<int>());   
 }
 
-
-void printArray(int array[], int sizeofArray) { 
-    for (int x = 0; x < sizeofArray; x++) {
-        std::cout << array[x] << " ";
-    }
-    std::cout << std::endl;
-}
-
 int main()
 {
-    int array[12] = { 5, 2, 1, 8, 9, 7, 6, 8, 2, 3, 0, 4 };       
-    std::cout << "Initial array: ";
-    printArray(array, 12);          
+    srand(time(NULL));
+    int array[12] = { rand() % 10, 
+                     rand() % 10, 
+                     rand() % 10, 
+                     rand() % 10, 
+                     rand() % 10, 
+                     rand() % 10, 
+                     rand() % 10, 
+                     rand() % 10, 
+                     rand() % 10, 
+                     rand() % 10, 
+                     rand() % 10, 
+                     rand() % 10};      
+   std::cout << "Initial array: ";
+    for (int x : array) {
+        std::cout << x << " ";
+    }
+    std::cout << std::endl;
     bitonicSequence(array, 12);           
     std::cout << "Bitonic Sorted array: ";       
-    printArray(array, 12);
+    for (int x : array) {
+        std::cout << x << " ";
+    }
+    std::cout << std::endl;
     return 0;
 }
